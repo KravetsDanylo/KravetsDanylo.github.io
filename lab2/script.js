@@ -1,10 +1,4 @@
-/**
- * SportClub - JavaScript для Лабораторної роботи №2
- * Реалізує:
- * - Фільтрацію товарів (приховування позначених як "Очікується")
- * - Логіку кошика (додавання товарів, зміна статусу кнопок)
- * - Розрахунок вартості замовлення
- */
+
 
 // ============================================
 // 1. ФІЛЬТРАЦІЯ ТОВАРІВ
@@ -259,15 +253,145 @@ function updateTotalAmount() {
     // Відображаємо суму
     totalElement.textContent = `${total} грн`;
 }
+// ============================================
+// 5. ДОДАТКОВІ ЗАВДАННЯ (Лабораторна робота)
+// ============================================
+
+/**
+ * Завдання 1: Керування DOM (Цикли for та Умови)
+ * Зміна кольору та додавання префікса для парних товарів
+ */
+function highlightEvenProducts() {
+    const titles = document.querySelectorAll('.product-card h3');
+    
+    // Обов'язкове використання циклу for
+    for (let i = 0; i < titles.length; i++) {
+        if (i % 2 === 0) {
+            // Парний індекс (0, 2, 4...)
+            titles[i].style.color = 'var(--primary-color)'; // Робимо синім
+            // Додаємо префікс, якщо його ще немає
+            if (!titles[i].textContent.includes('[Sale]')) {
+                titles[i].textContent = '[Sale] ' + titles[i].textContent;
+            }
+        } else {
+            // Непарний індекс - залишаємо стандартним
+            titles[i].style.color = 'var(--text-dark)';
+        }
+    }
+}
+
+/**
+ * Завдання 2: Обробка подій (Групові операції та Видимість)
+ */
+function setupEventHandlers() {
+    // 2.1 Перемикач видимості місії
+    const toggleBtn = document.getElementById('toggle-mission-btn');
+    const missionParagraphs = document.querySelectorAll('.company-desc p');
+
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', function() {
+            // Використовуємо for для перебору всіх абзаців
+            for (let i = 0; i < missionParagraphs.length; i++) {
+                const p = missionParagraphs[i];
+                // Логіка if-else для перемикання видимості
+                if (p.style.display === 'none') {
+                    p.style.display = 'block';
+                } else {
+                    p.style.display = 'none';
+                }
+            }
+        });
+    }
+
+    // 2.2 Обробники у циклі (клік по навігації)
+    const navLinks = document.querySelectorAll('.main-nav a');
+    for (let i = 0; i < navLinks.length; i++) {
+        navLinks[i].addEventListener('click', function() {
+            console.log('Ви клікнули на пункт меню: ' + this.textContent);
+        });
+    }
+
+    // 2.3 Ефект наведення на картки (mouseenter / mouseleave)
+    const productCards = document.querySelectorAll('.product-card');
+    for (let i = 0; i < productCards.length; i++) {
+        productCards[i].addEventListener('mouseenter', function() {
+            this.style.backgroundColor = '#f0f9ff'; // Світло-блакитний фон при наведенні
+            this.style.transform = 'translateY(-10px) scale(1.02)'; // Посилюємо анімацію
+        });
+        
+        productCards[i].addEventListener('mouseleave', function() {
+            this.style.backgroundColor = 'white'; // Повертаємо оригінальний фон
+            this.style.transform = ''; // Зкидаємо transform для спрацювання CSS-правил
+        });
+    }
+}
+
+/**
+ * Завдання 3: Динамічне керування контентом (Форми та Валідація)
+ */
+function setupReviewForm() {
+    const form = document.getElementById('review-form');
+    const nameInput = document.getElementById('reviewer-name');
+    const textInput = document.getElementById('review-text');
+    const errorMsg = document.getElementById('review-error');
+    const reviewsContainer = document.getElementById('reviews-container');
+
+    if (form) {
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Запобігаємо перезавантаженню сторінки
+
+            const nameValue = nameInput.value.trim();
+            const textValue = textInput.value.trim();
+
+            // Валідація через if-else
+            if (nameValue === '' || textValue === '') {
+                // Якщо хоча б одне поле порожнє
+                errorMsg.style.display = 'block';
+            } else {
+                // Якщо поля заповнені
+                errorMsg.style.display = 'none';
+
+                
+                const reviewCard = document.createElement('div');
+                reviewCard.className = 'review-item'; 
+                
+                reviewCard.style.padding = '1.5rem';
+                reviewCard.style.backgroundColor = 'white';
+                reviewCard.style.borderRadius = '8px';
+                reviewCard.style.boxShadow = 'var(--card-shadow)';
+                reviewCard.style.borderLeft = '4px solid var(--success)';
+
+                const authorHeader = document.createElement('h4');
+                authorHeader.textContent = nameValue;
+                authorHeader.style.marginBottom = '0.5rem';
+
+                const reviewParagraph = document.createElement('p');
+                reviewParagraph.textContent = textValue;
+                reviewParagraph.style.color = 'var(--text-light)';
+
+                // Компонуємо елемент
+                reviewCard.appendChild(authorHeader);
+                reviewCard.appendChild(reviewParagraph);
+
+                // Додаємо в контейнер (prepend додає на початок списку)
+                reviewsContainer.prepend(reviewCard);
+
+                // Очищаємо форму після успішного додавання
+                form.reset();
+            }
+        });
+    }
+}
 
 // ============================================
-// 4. ІНІЦІАЛІЗАЦІЯ
+// 6. ІНІЦІАЛІЗАЦІЯ
 // ============================================
 
 /**
  * Ініціалізація додатка
  * Викликається після завантаження DOM
  */
+
 function init() {
     // Фільтруємо товари (приховуємо "Очікується")
     filterProducts();
@@ -281,6 +405,13 @@ function init() {
     // Початкове відображення кошика
     renderCart();
     updateTotalAmount();
+
+    // ======================================
+    // Виклики нових функцій з Лабораторної
+    // ======================================
+    highlightEvenProducts(); // Завдання 1
+    setupEventHandlers();    // Завдання 2
+    setupReviewForm();       // Завдання 3
 }
 
 // Запускаємо додаток після завантаження DOM

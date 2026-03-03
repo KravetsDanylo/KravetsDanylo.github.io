@@ -148,29 +148,49 @@
 
         <!-- Секція про нас -->
         <section id="about" class="container bg-light">
-            <h2>Про нас</h2>
-            <div class="about-content">
-                <div class="company-desc">
-                    <h3>Наша місія</h3>
-                    <p>
-                        SportClub — це ваш надійний партнер у світі спорту та здорового
-                        способу життя. Ми прагнемо зробити якісний спортивний інвентар
-                        доступним для кожного, незалежно від рівня підготовки.
-                    </p>
-                    <p>
-                        <strong>Наші цінності:</strong> Якість, доступність, підтримка
-                        українського спорту та постійний розвиток.
-                    </p>
-                </div>
-                <div class="contact-info">
-                    <h3>Контакти</h3>
-                    <address>
-                        <p>📍 м. Львів, вул. Степана Бандери, 10</p>
-                        <p>📞 +38 (099) 123-45-67</p>
-                        <p>✉️ support@sportclub.lviv.ua</p>
-                    </address>
-                </div>
+        <h2>Про нас</h2>
+        <div class="about-content">
+            <div class="company-desc">
+            <h3>Наша місія</h3>
+            <button id="toggle-mission-btn" class="btn" style="width: auto; padding: 0.5rem 1rem; margin-bottom: 1rem; font-size: 0.9rem;">Показати/Сховати місію</button>
+            
+            <p>
+                SportClub — це ваш надійний партнер у світі спорту та здорового
+                способу життя. Ми прагнемо зробити якісний спортивний інвентар
+                доступним для кожного, незалежно від рівня підготовки.
+            </p>
+            <p>
+                <strong>Наші цінності:</strong> Якість, доступність, підтримка
+                українського спорту та постійний розвиток.
+            </p>
             </div>
+            <div class="contact-info">
+                <h3>Контакти</h3>
+                <address>
+                <p>📍 м. Львів, вул. Степана Бандери, 10</p>
+                <p>📞 +38 (099) 123-45-67</p>
+                <p>✉️ support@sportclub.lviv.ua</p>
+                </address>
+            </div>
+        </div>
+
+    <div class="reviews-section" style="margin-top: 3rem; border-top: 2px solid #e2e8f0; padding-top: 2rem;">
+        <h3>Залишити відгук</h3>
+        <form id="review-form" class="review-form" style="max-width: 600px; margin-top: 1rem;">
+            <div style="margin-bottom: 1rem;">
+                <input type="text" id="reviewer-name" placeholder="Ваше ім'я" style="width: 100%; padding: 0.8rem; border: 1px solid #cbd5e1; border-radius: 4px; font-family: inherit;">
+            </div>
+            <div style="margin-bottom: 1rem;">
+                <textarea id="review-text" placeholder="Ваш відгук" rows="4" style="width: 100%; padding: 0.8rem; border: 1px solid #cbd5e1; border-radius: 4px; font-family: inherit; resize: vertical;"></textarea>
+            </div>
+            <p id="review-error" style="color: var(--danger); display: none; margin-bottom: 1rem; font-weight: bold;">Помилка: Будь ласка, заповніть всі поля!</p>
+            
+            <button type="submit" class="btn" style="width: auto; padding: 0.8rem 2rem;">Надіслати відгук</button>
+        </form>
+        
+        <div id="reviews-container" style="margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem;">
+        </div>
+    </div>
         </section>
     </main>
 
