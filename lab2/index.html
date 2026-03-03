@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SportClub | Онлайн-магазин спортивних товарів</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-content">
+            <div class="logo">
+                <h1>SportClub</h1>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#products">Продукти</a></li>
+                    <li><a href="#promotions">Акції</a></li>
+                    <li><a href="#orders">Кошик</a></li>
+                    <li><a href="#profile">Мій профіль</a></li>
+                    <li><a href="#about">Про нас</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Секція продуктів -->
+        <section id="products" class="container">
+            <h2>Наші товари</h2>
+            <div class="product-grid">
+                <article class="product-card" data-id="1" data-price="3500">
+                    <img src="./resources/snickers.jpg" alt="Спортивні кросівки Nike" />
+                    <div class="card-content">
+                        <h3>Кросівки бігові Pro</h3>
+                        <p class="description">
+                            Легкі та дихаючі кросівки для професійного бігу по асфальту.
+                        </p>
+                        <p class="price">3 500 грн</p>
+                        <p class="availability in-stock">В наявності</p>
+                        <p class="rating">Рейтинг: ⭐⭐⭐⭐⭐ (4.8)</p>
+                        <button class="btn">В кошик</button>
+                    </div>
+                </article>
+
+                <article class="product-card" data-id="2" data-price="450">
+                    <img src="./resources/bottle.jpg" alt="Спортивна пляшка" />
+                    <div class="card-content">
+                        <h3>Пляшка для води Eco</h3>
+                        <p class="description">
+                            Ергономічна пляшка об'ємом 1 літр з безпечного пластику Tritan.
+                        </p>
+                        <p class="price">450 грн</p>
+                        <p class="availability in-stock">В наявності</p>
+                        <p class="rating">Рейтинг: ⭐⭐⭐⭐ (4.2)</p>
+                        <button class="btn">В кошик</button>
+                    </div>
+                </article>
+
+                <article class="product-card" data-id="3" data-price="1800">
+                    <img src="./resources/dumbbells.jpg" alt="Гантелі" />
+                    <div class="card-content">
+                        <h3>Гантелі розбірні (15 кг)</h3>
+                        <p class="description">
+                            Набір розбірних гантелей для домашніх тренувань.
+                        </p>
+                        <p class="price">1 800 грн</p>
+                        <p class="availability out-of-stock">Очікується</p>
+                        <p class="rating">Рейтинг: ⭐⭐⭐⭐⭐ (4.9)</p>
+                        <button class="btn disabled" disabled>В кошик</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Секція акцій -->
+        <section id="promotions" class="container bg-light">
+            <h2>Акції та спеціальні пропозиції</h2>
+            <div class="promo-grid">
+                <article class="promo-block">
+                    <div class="promo-text">
+                        <h3>Зимовий розпродаж</h3>
+                        <p>Отримайте знижку на всі зимові куртки та термобілизну.</p>
+                    </div>
+                    <div class="promo-discount">-30%</div>
+                </article>
+                <article class="promo-block">
+                    <div class="promo-text">
+                        <h3>1+1 = 3</h3>
+                        <p>
+                            Купуйте дві пари шкарпеток для фітнесу та отримайте третю у
+                            подарунок!
+                        </p>
+                    </div>
+                    <div class="promo-discount">Подарунок</div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Секція кошика (замовлення) -->
+        <section id="orders" class="container">
+            <h2>Ваш кошик</h2>
+            <div class="cart-content">
+                <div id="cart-items" class="cart-items">
+                    <!-- Товари в кошику будуть додаватися тут -->
+                    <p class="cart-empty">Кошик порожній</p>
+                </div>
+                <div class="cart-summary">
+                    <div class="summary-row">
+                        <span>Загальна сума:</span>
+                        <span id="total-amount">0 грн</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секція профілю -->
+        <section id="profile" class="container">
+            <h2>Мій профіль</h2>
+            <div class="profile-layout">
+                <div class="profile-info">
+                    <div class="avatar">D</div>
+                    <h3>Danylo</h3>
+                    <p>Статус: Постійний клієнт</p>
+                </div>
+                <div class="profile-details">
+                    <article class="history">
+                        <h4>Історія покупок</h4>
+                        <ul>
+                            <li>
+                                Килимок для йоги (12.01.2026) — <strong>Виконано</strong>
+                            </li>
+                            <li>
+                                Еспандер трубчастий (05.11.2025) — <strong>Виконано</strong>
+                            </li>
+                        </ul>
+                    </article>
+                    <article class="wishlist">
+                        <h4>Бажані товари</h4>
+                        <ul>
+                            <li>Фітнес-браслет Xiaomi Band 8</li>
+                            <li>Спортивна сумка Duffle</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секція про нас -->
+        <section id="about" class="container bg-light">
+        <h2>Про нас</h2>
+        <div class="about-content">
+            <div class="company-desc">
+            <h3>Наша місія</h3>
+            <button id="toggle-mission-btn" class="btn" style="width: auto; padding: 0.5rem 1rem; margin-bottom: 1rem; font-size: 0.9rem;">Показати/Сховати місію</button>
+            
+            <p>
+                SportClub — це ваш надійний партнер у світі спорту та здорового
+                способу життя. Ми прагнемо зробити якісний спортивний інвентар
+                доступним для кожного, незалежно від рівня підготовки.
+            </p>
+            <p>
+                <strong>Наші цінності:</strong> Якість, доступність, підтримка
+                українського спорту та постійний розвиток.
+            </p>
+            </div>
+            <div class="contact-info">
+                <h3>Контакти</h3>
+                <address>
+                <p>📍 м. Львів, вул. Степана Бандери, 10</p>
+                <p>📞 +38 (099) 123-45-67</p>
+                <p>✉️ support@sportclub.lviv.ua</p>
+                </address>
+            </div>
+        </div>
+
+    <div class="reviews-section" style="margin-top: 3rem; border-top: 2px solid #e2e8f0; padding-top: 2rem;">
+        <h3>Залишити відгук</h3>
+        <form id="review-form" class="review-form" style="max-width: 600px; margin-top: 1rem;">
+            <div style="margin-bottom: 1rem;">
+                <input type="text" id="reviewer-name" placeholder="Ваше ім'я" style="width: 100%; padding: 0.8rem; border: 1px solid #cbd5e1; border-radius: 4px; font-family: inherit;">
+            </div>
+            <div style="margin-bottom: 1rem;">
+                <textarea id="review-text" placeholder="Ваш відгук" rows="4" style="width: 100%; padding: 0.8rem; border: 1px solid #cbd5e1; border-radius: 4px; font-family: inherit; resize: vertical;"></textarea>
+            </div>
+            <p id="review-error" style="color: var(--danger); display: none; margin-bottom: 1rem; font-weight: bold;">Помилка: Будь ласка, заповніть всі поля!</p>
+            
+            <button type="submit" class="btn" style="width: auto; padding: 0.8rem 2rem;">Надіслати відгук</button>
+        </form>
+        
+        <div id="reviews-container" style="margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem;">
+        </div>
+    </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-logo">SportClub</div>
+            <div class="footer-links">
+                <p>&copy; 2026 SportClub. Всі права захищені.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Підключення JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
