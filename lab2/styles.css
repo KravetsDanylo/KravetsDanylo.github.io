@@ -563,3 +563,21 @@ h2 {
         margin-top: 0;
     }
 }
+/* --- Кнопка видалення з кошика (смітничок) --- */
+.cart-item-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.remove-item-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--danger); /* Червоний колір з ваших змінних */
+    transition: transform 0.2s ease, filter 0.2s ease;
+    padding: 0.5rem;
+    line-height: 1;
+}
+
