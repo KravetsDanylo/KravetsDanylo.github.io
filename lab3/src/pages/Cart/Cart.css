@@ -1,0 +1,126 @@
+.cart-page {
+  padding: 2rem 0;
+}
+
+.cart-empty {
+  background: white;
+  padding: 3rem 2rem;
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  text-align: center;
+  color: var(--text-light);
+  font-size: 1.1rem;
+}
+
+.cart-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+}
+
+.cart-items {
+  min-height: 100px;
+  margin-bottom: 1.5rem;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-light);
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.cart-item-info {
+  flex: 1;
+  min-width: 150px;
+}
+
+.cart-item-name {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.cart-item-price {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.cart-item-quantity {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cart-item-quantity label {
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+.cart-item-quantity input {
+  width: 60px;
+  padding: 0.4rem;
+  border: 1px solid var(--border-dark);
+  border-radius: 4px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.cart-item-quantity input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+.cart-item-total {
+  font-weight: bold;
+  color: var(--primary-color);
+  min-width: 80px;
+  text-align: right;
+}
+
+.cart-item-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.remove-item-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--danger);
+  transition: transform 0.2s ease, filter 0.2s ease;
+  padding: 0.5rem;
+  line-height: 1;
+}
+
+.remove-item-btn:hover {
+  transform: scale(1.2);
+  filter: brightness(0.9);
+}
+
+.cart-summary {
+  border-top: 2px solid var(--border-light);
+  padding-top: 1rem;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+#total-amount {
+  color: var(--primary-color);
+}
