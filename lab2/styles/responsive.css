@@ -1,0 +1,98 @@
+/* Планшети (від 768px) */
+@media (min-width: 768px) {
+  .header-content {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+  }
+
+  .main-nav ul {
+    flex-direction: row;
+    width: auto;
+  }
+
+  .main-nav a {
+    width: auto;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .promo-grid {
+    flex-direction: row;
+  }
+
+  .promo-block {
+    flex: 1;
+  }
+
+  .profile-layout {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .profile-info {
+    flex: 1;
+    border-bottom: none;
+    border-right: 1px solid #e2e8f0;
+    padding-right: 1.5rem;
+    padding-bottom: 0;
+  }
+
+  .profile-details {
+    flex: 2;
+    padding-left: 1.5rem;
+  }
+
+  .cart-item {
+    flex-wrap: wrap;
+  }
+
+  .cart-item-total {
+    width: 100%;
+    text-align: left;
+    margin-top: 0.5rem;
+  }
+}
+
+/* Десктопи (від 1024px) */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1200px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .about-content {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .company-desc {
+    flex: 2;
+    padding-right: 2rem;
+  }
+
+  .contact-info {
+    flex: 1;
+  }
+
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .cart-item {
+    flex-wrap: nowrap;
+  }
+
+  .cart-item-total {
+    width: auto;
+    text-align: right;
+    margin-top: 0;
+  }
+}
