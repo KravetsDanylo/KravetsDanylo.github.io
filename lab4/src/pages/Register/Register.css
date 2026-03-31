@@ -1,0 +1,10 @@
+/* src/pages/Register/Register.css */
+.register-page {
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+/* Reuse auth-container styles from Login.css */
