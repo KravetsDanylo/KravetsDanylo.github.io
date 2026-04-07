@@ -1,0 +1,25 @@
+.site-footer {
+  background-color: var(--bg-dark);
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: auto;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.footer-logo {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.footer-links p {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
