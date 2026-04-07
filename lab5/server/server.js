@@ -42,7 +42,7 @@ const db = admin.firestore()
 
 // Middleware
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://localhost:5173', 'https://tviy-frontend.vercel.app'],
+  origin: ['http://localhost:3000', 'http://localhost:5173', 'https://sportclub-app.netlify.app/'],
   credentials: true
 }))
 app.use(express.json())
