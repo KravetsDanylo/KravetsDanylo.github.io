@@ -42,7 +42,7 @@ const db = admin.firestore()
 
 // Middleware
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://localhost:5173', 'https://sportclub-app.netlify.app/'],
+  origin: true,
   credentials: true
 }))
 app.use(express.json())
